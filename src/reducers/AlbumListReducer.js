@@ -1,6 +1,7 @@
 const initialState = {
   albums: [],
-  loading: false
+  loading: false,
+  singleAlbum: {}
 };
 export default (state = initialState, action) => {
   switch (action.type) {
@@ -15,6 +16,11 @@ export default (state = initialState, action) => {
         ...state,
         loading: action.payload
       };
+      case "SINGLE_ALBUM_DATA":
+        return {
+          ...state,
+          singleAlbum: action.payload
+        };
     default:
       return state;
   }

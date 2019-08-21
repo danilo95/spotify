@@ -19,9 +19,7 @@ class MainPage extends React.Component {
         <Content className="albums-Container">
           {this.props.isloading ? null : <AlbumList />}
         </Content>
-        <Footer style={{ textAlign: "center" }}>
-          Ant Design ©2018 Created by Ant UED
-        </Footer>
+        <Footer style={{ textAlign: "center" }}>Spotify 2019</Footer>
       </Layout>
     );
   }

@@ -1,5 +1,6 @@
 import React from "react";
 import "./albumList.css";
+import { Link } from "react-router-dom";
 import { randomListOfAlbums } from "../../actions/AlbumListActions";
 import { connect } from "react-redux";
 import { Card } from "antd";
@@ -11,11 +12,9 @@ class AlbumList extends React.Component {
   }
 
   render() {
-    console.log(this.props.albums);
     return (
       <>
         {this.props.albums.map((info, index) => {
-          console.log(info.external_urls.spotify);
           return (
             <Card
               key={index}
@@ -25,14 +24,21 @@ class AlbumList extends React.Component {
             >
               <div className="middle">
                 <div className="text">
-                  <a className="button" href={`${info.external_urls.spotify}`}>
+                  <a
+                    className="button"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href={`${info.external_urls.spotify}`}
+                  >
                     Go To Spotify
                   </a>
                 </div>
               </div>
-              <div className="album-name">
-                <Meta title={info.name} />
-              </div>
+              <Link to={`/AlbumDetail/${info.id}`}>
+                <div className="album-name">
+                  <Meta title={info.name} />
+                </div>
+              </Link>
               <div className="album-artist">
                 <Meta description={info.artists[0].name} />
               </div>
