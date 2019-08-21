@@ -6,7 +6,7 @@ localStorage.getItem("Token") === null
 
 export const getRandomListOfAlbums = () => {
   let result = BackendApi.get(
-    "/search?query=linkin&type=album&market=SV&offset=0&limit=20",
+    "/search?query=a*&type=album&market=SV&offset=0&limit=20",
     {
       headers: {
         "Content-Type": "application/json",

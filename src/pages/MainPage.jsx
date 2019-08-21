@@ -1,5 +1,6 @@
 import React from "react";
 import NavBar from "../components/navBar/NavBar";
+import LoadingPage from "../components/loading/Loading";
 import AlbumList from "../components/albumList/AlbumList";
 import { loading } from "../actions/AlbumListActions";
 import { connect } from "react-redux";
@@ -10,13 +11,14 @@ const { Content, Footer } = Layout;
 class MainPage extends React.Component {
   componentDidMount() {
     verificateIfTokenExist();
+    this.props.loading();
   }
-  render() {
+  render() { console.log(this.props.isloading)
     return (
       <Layout>
         <NavBar />
         <Content className="albums-Container">
-          {this.props.isloading ? null : <AlbumList />}
+          {this.props.isloading ? <LoadingPage/> : <AlbumList />}
         </Content>
         <Footer style={{ textAlign: "center" }}>Spotify 2019</Footer>
       </Layout>
