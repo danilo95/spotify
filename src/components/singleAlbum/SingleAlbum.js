@@ -10,7 +10,7 @@ class SingleAlbum extends React.Component {
     this.props.singleAlbumData(this.props.id);
   }
 
-  render() {
+  render() { 
     let {
       tracks = [],
       images = [],
