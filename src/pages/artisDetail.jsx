@@ -1,9 +1,9 @@
 import React from "react";
 import { Layout } from "antd";
 import NavBar from "../components/navBar/NavBar";
-import SingleAlbum from "../components/singleAlbum/SingleAlbum";
+import ArtistInfo from "../components/artistInfo/artistInfo";
 const { Content, Footer } = Layout;
-class DetailAlbum extends React.Component {
+class artisDetail extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -16,7 +16,7 @@ class DetailAlbum extends React.Component {
       <Layout>
         <NavBar />
         <Content className="albums-Container">
-          <SingleAlbum id={this.state.id} />
+        <ArtistInfo id={this.state.id}/>
         </Content>
         <Footer style={{ textAlign: "center" }}>Spotify 2019</Footer>
       </Layout>
@@ -24,4 +24,4 @@ class DetailAlbum extends React.Component {
   }
 }
 
-export default DetailAlbum;
+export default artisDetail;

@@ -15,7 +15,6 @@ export const getRandomListOfAlbums = () => {
     }
   )
     .then(response => {
-      console.log(response.data.albums.items);
       return response.data.albums.items;
     })
     .catch(error => {
@@ -34,7 +33,26 @@ export const getSingleAlbum = id => {
     }
   })
     .then(response => {
-      console.log(response.data);
+      return response.data;
+    })
+    .catch(error => {
+      console.log(error);
+      return error;
+    });
+
+  return result;
+};
+
+export const getartist = id => {
+  console.log(id)
+  let result = BackendApi.get(`/artists/${id}`, {
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${Token}`
+    }
+  })
+    .then(response => {
+      console.log('artist',response.data)
       return response.data;
     })
     .catch(error => {

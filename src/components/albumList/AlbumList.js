@@ -39,9 +39,11 @@ class AlbumList extends React.Component {
                   <Meta title={info.name} />
                 </div>
               </Link>
-              <div className="album-artist">
-                <Meta description={info.artists[0].name} />
-              </div>
+              <Link to={`/ArtistDetail/${info.artists[0].id}`}>
+                <div className="album-artist">
+                  <Meta description={info.artists[0].name} />
+                </div>
+              </Link>
             </Card>
           );
         })}

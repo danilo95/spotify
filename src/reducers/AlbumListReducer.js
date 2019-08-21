@@ -1,7 +1,7 @@
 const initialState = {
   albums: [],
   loading: false,
-  singleAlbum: {}
+  singleAlbum: []
 };
 export default (state = initialState, action) => {
   switch (action.type) {
