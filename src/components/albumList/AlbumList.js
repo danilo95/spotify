@@ -3,18 +3,32 @@ import "./albumList.css";
 import { Link } from "react-router-dom";
 import { randomListOfAlbums } from "../../actions/AlbumListActions";
 import { connect } from "react-redux";
-import { Card } from "antd";
+import { Card,Pagination } from "antd";
 const { Meta } = Card;
 
 class AlbumList extends React.Component {
+  state = {
+    current: 1,
+  };
   componentDidMount() {
-    this.props.randomListOfAlbums();
+    this.props.randomListOfAlbums('*a','20');
   }
 
+  onChange = page => {
+    this.setState({
+      current: page,
+    });
+    this.props.randomListOfAlbums(page,'20');
+  };
+
   render() {
+    let {
+      items = [],
+      total=0
+    } = this.props.albums;
     return (
       <>
-        {this.props.albums.map((info, index) => {
+        {items.map((info, index) => {
           return (
             <Card
               key={index}
@@ -47,6 +61,7 @@ class AlbumList extends React.Component {
             </Card>
           );
         })}
+       <Pagination defaultCurrent={this.state.current} total={(total/20)}  onChange={this.onChange}/>
       </>
     );
   }

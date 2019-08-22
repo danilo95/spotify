@@ -4,7 +4,6 @@ import { getArtistByid } from "../../actions/artistActions";
 import { connect } from "react-redux";
 class artistInfo extends React.Component {
   componentDidMount() {
-    console.log(this.props.id);
     this.props.getArtistByid(this.props.id);
   }
   render() {

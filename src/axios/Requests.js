@@ -1,8 +1,8 @@
 import BackendApi from "./BackEndApi";
 
-export const getRandomListOfAlbums = () => {
+export const getRandomListOfAlbums = (search,offset) => {
   let result = BackendApi.get(
-    "/search?query=*a&type=album&market=SV&offset=0&limit=20",
+    `/search?query=${search}&type=album&market=SV&offset=${offset}&limit=20`,
     {
       headers: {
         "Content-Type": "application/json",
@@ -11,7 +11,8 @@ export const getRandomListOfAlbums = () => {
     }
   )
     .then(response => {
-      return response.data.albums.items;
+      console.log('este es el objeto',response.data.albums)
+      return response.data.albums;
     })
     .catch(error => {
       console.log(error.response.status);
@@ -41,7 +42,6 @@ export const getSingleAlbum = id => {
 };
 
 export const getartist = id => {
-  console.log(id)
   let result = BackendApi.get(`/artists/${id}`, {
     headers: {
       "Content-Type": "application/json",
@@ -49,7 +49,7 @@ export const getartist = id => {
     }
   })
     .then(response => {
-      console.log('artist',response.data)
+
       return response.data;
     })
     .catch(error => {
@@ -72,7 +72,7 @@ export const getUserInfo = () => {
     }
   )
     .then(response => {
-      console.log('user',response.data)
+  
       return response.data;
     })
     .catch(error => {

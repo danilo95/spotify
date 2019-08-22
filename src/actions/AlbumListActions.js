@@ -1,7 +1,7 @@
 import { getRandomListOfAlbums, getSingleAlbum } from "../axios/Requests";
 
-export const randomListOfAlbums = () => async dispatch => {
-  const response = await getRandomListOfAlbums();
+export const randomListOfAlbums = (search,offset) => async dispatch => {
+  const response = await getRandomListOfAlbums(search,offset);
   dispatch({ type: "RANDOM_ALBUM_LIST", payload: response });
 };
 
