@@ -11,10 +11,9 @@ import { verificateIfTokenExist } from "../../auth/Auth";
 class Index extends React.Component {
   componentDidMount() {
     let _token = hash.access_token;
-    if (_token) {
+    if (_token) { debugger;
       localStorage.setItem("Token", _token);
     }
-    console.log(hash);
     verificateIfTokenExist();
   }
 
