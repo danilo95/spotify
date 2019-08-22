@@ -1,8 +1,5 @@
 import BackendApi from "./BackEndApi";
-let Token;
-localStorage.getItem("Token") === null
-  ? (Token = null)
-  : (Token = localStorage.getItem("Token"));
+let Token = localStorage.getItem("Token");
 
 export const getRandomListOfAlbums = () => {
   let result = BackendApi.get(
@@ -18,7 +15,7 @@ export const getRandomListOfAlbums = () => {
       return response.data.albums.items;
     })
     .catch(error => {
-      console.log(error);
+      console.log(error.response.status);
       return error;
     });
 
@@ -36,7 +33,8 @@ export const getSingleAlbum = id => {
       return response.data;
     })
     .catch(error => {
-      console.log(error);
+      console.log(error.response);
+      handleError(error)
       return error;
     });
 
@@ -61,4 +59,41 @@ export const getartist = id => {
     });
 
   return result;
+};
+
+
+export const getUserInfo = () => {
+  let result = BackendApi.get(
+    "/me",
+    {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${Token}`
+      }
+    }
+  )
+    .then(response => {
+      console.log('user',response.data)
+      return response.data;
+    })
+    .catch(error => {
+      console.log(error.response);
+      return error;
+    });
+
+  return result;
+};
+
+
+
+
+const handleError = errorHttp => {
+  switch (errorHttp.response.status) {
+    case 400:
+      return { status: 400, message: errorHttp.response.data.error };
+      case 401:
+      return {error:true, status: 401, message: errorHttp.response.data.error,header: 'UPS!! SOMETHING GOES WRONG',};
+    default:
+      return { status: 500, message: errorHttp.response.data.error };
+  }
 };

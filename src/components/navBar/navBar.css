@@ -104,3 +104,11 @@
     padding: 10px 20px;
   }
 }
+
+*{
+  color:black;
+}
+
+.ant-drawer-body .ant-menu-horizontal > .ant-menu-item, .ant-drawer-body .ant-menu-horizontal > .ant-menu-submenu {
+  width:50%;
+}
