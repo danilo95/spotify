@@ -1,7 +1,9 @@
 import React from "react";
+import { connect } from "react-redux";
 import Genres from "../genres/Genres";
 import { getArtistByid } from "../../actions/artistActions";
-import { connect } from "react-redux";
+import TopTracks from "./topTracksByArtist";
+import RelatedArtists from "./relatedArtistInformation";
 class artistInfo extends React.Component {
   componentDidMount() {
     this.props.getArtistByid(this.props.id);
@@ -31,6 +33,8 @@ class artistInfo extends React.Component {
           alt="album cover"
         />
         <Genres genres={genres} />
+        <TopTracks id={this.props.id}/>
+        <RelatedArtists id={this.props.id}/>
       </>
     );
   }

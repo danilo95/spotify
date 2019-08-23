@@ -1,45 +1,34 @@
 import React from "react";
 import { connect } from "react-redux";
 import { List, Avatar } from "antd";
-import { singleAlbumData } from "../../actions/AlbumListActions";
+import { topTracks } from "../../actions/artistActions";
 import { convertToMinutes } from "../../utilities/UtilitiesFunctions";
-import AlbumCover from "./albumCover/AlbumCover";
+import "./topTracks.css";
 
+class TopTracksByArtist extends React.Component {
 
-class SingleAlbum extends React.Component {
   componentDidMount() {
-    this.props.singleAlbumData(this.props.id);
+  this.props.topTracks(this.props.id)
   }
 
-  render() { 
-    let {
-      tracks = [],
-      images = [],
-      artists = [],
-      name = null,
-      external_urls = null
-    } = this.props.singleAlbum;
+  render() {  let {
+      tracks = []
+    } = this.props.topArtistTracks;
     return (
-      <>
-        <AlbumCover
-          images={images}
-          artists={artists}
-          albumName={name}
-          external_urls={external_urls}
-        />
-        <List
+      <div className="list-top-trakcs"> 
+       <List
           itemLayout="horizontal"
-          dataSource={tracks.items}
+          dataSource={tracks}
           renderItem={item => (
             <List.Item>
               <List.Item.Meta
-                avatar={<Avatar src={`${images[0].url}`} />}
+                avatar={<Avatar src="https://library.kissclipart.com/20180904/ole/kissclipart-play-button-png-clipart-computer-icons-clip-art-310d0da4a284c23a.jpg" />}
                 title={
-                  <a
+                  <a 
                     href={item.external_urls.spotify}
                     target="_blank"
                     rel="noopener noreferrer"
-                  >
+                  > 
                     {item.name}
                   </a>
                 }
@@ -48,19 +37,18 @@ class SingleAlbum extends React.Component {
             </List.Item>
           )}
         />
-        ,
-      </>
+      </div>
     );
   }
 }
 
 const mapStateToProps = state => {
   return {
-    singleAlbum: state.albums.singleAlbum
+    topArtistTracks: state.artist.topTracks
   };
 };
 
 export default connect(
   mapStateToProps,
-  { singleAlbumData }
-)(SingleAlbum);
+  { topTracks }
+)(TopTracksByArtist);

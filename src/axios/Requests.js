@@ -11,7 +11,6 @@ export const getRandomListOfAlbums = (search,offset) => {
     }
   )
     .then(response => {
-      console.log('este es el objeto',response.data.albums)
       return response.data.albums;
     })
     .catch(error => {
@@ -83,7 +82,49 @@ export const getUserInfo = () => {
   return result;
 };
 
+export const getTopTracks = (id) => {
+  let result = BackendApi.get(
+    `/artists/${id}/top-tracks?country=SV`,
+    {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${localStorage.getItem("Token")}`
+      }
+    }
+  )
+    .then(response => {
+      console.log(response.data.tracks)
+      return response.data;
+    })
+    .catch(error => {
+      console.log(error.response.status);
+      return error;
+    });
 
+  return result;
+};
+
+export const getRelatedArtist = (id) => {
+  let result = BackendApi.get(
+    `artists/${id}/related-artists`,
+    {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${localStorage.getItem("Token")}`
+      }
+    }
+  )
+    .then(response => {
+      console.log(response.data.artists)
+      return response.data;
+    })
+    .catch(error => {
+      console.log(error.response.status);
+      return error;
+    });
+
+  return result;
+};
 
 
 const handleError = errorHttp => {

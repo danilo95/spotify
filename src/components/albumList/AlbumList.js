@@ -15,14 +15,14 @@ class AlbumList extends React.Component {
     this.props.randomListOfAlbums('*a','20');
   }
 
-  onChange = page => {
+  onChange = (page) => {
     this.setState({
       current: page,
     });
-    this.props.randomListOfAlbums(page,'20');
+    this.props.randomListOfAlbums('*a',page*20);
   };
 
-   searchHandler = (search,offset) => {
+   searchHandler = (search,offset) => { 
     this.props.randomListOfAlbums(search,offset);
   };
 
