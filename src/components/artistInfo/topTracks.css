@@ -1,10 +1,32 @@
 .list-top-trakcs{
-  width:75%;
   display:flex;
   justify-content:center;
 }
-.banner{
-  width:50%;
-  height:500px;
-  background-color:black;
+.img-relation{
+  height: 60px;
+  width:100%
+}
+.ant-card-grid {
+     display: flex;
+    justify-content: center;
+  width: 10%;
+    height: 60px;
+    padding: 0;
+    transition: transform .2s;
+    border-radius: 0;
+    -webkit-box-shadow: 1px 0 0 0 #e8e8e8, 0 1px 0 0 #e8e8e8, 1px 1px 0 0 #e8e8e8, 1px 0 0 0 #e8e8e8 inset, 0 1px 0 0 #e8e8e8 inset;
+    box-shadow: 1px 0 0 0 #e8e8e8, 0 1px 0 0 #e8e8e8, 1px 1px 0 0 #e8e8e8, 1px 0 0 0 #e8e8e8 inset, 0 1px 0 0 #e8e8e8 inset;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+.ant-card-grid:hover {
+  transform: scale(1.5); 
+ cursor:pointer;
+}
+
+@media (max-width: 650px) {
+  .ant-card-grid {
+   width: 20%;
+  }
 }

@@ -13,8 +13,6 @@
   color: black;
 }
 .artis-header{
-  display: flex;
-  justify-content: space-around;
   width: 50%;
 }
 .artis-header h2{

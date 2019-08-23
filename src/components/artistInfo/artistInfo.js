@@ -17,6 +17,7 @@ class artistInfo extends React.Component {
     } = this.props.artist;
     return (
       <>
+     <div className="album-cover-container">
       <div className="artis-header">
         <h2>
           <i className="fa fa-music fafa-color" aria-hidden="true" /> {name}
@@ -32,8 +33,10 @@ class artistInfo extends React.Component {
           src={images.length > 0 ? `${images[0].url}` : null}
           alt="album cover"
         />
-        <Genres genres={genres} />
+        </div>
+        
         <TopTracks id={this.props.id}/>
+        <Genres genres={genres} />
         <RelatedArtists id={this.props.id}/>
       </>
     );
