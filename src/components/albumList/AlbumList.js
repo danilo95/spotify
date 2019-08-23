@@ -1,9 +1,10 @@
 import React from "react";
-import "./albumList.css";
 import { Link } from "react-router-dom";
 import { randomListOfAlbums } from "../../actions/AlbumListActions";
 import { connect } from "react-redux";
 import { Card,Pagination } from "antd";
+import "./albumList.css";
+import Search from "../search/search";
 const { Meta } = Card;
 
 class AlbumList extends React.Component {
@@ -21,6 +22,10 @@ class AlbumList extends React.Component {
     this.props.randomListOfAlbums(page,'20');
   };
 
+   searchHandler = (search,offset) => {
+    this.props.randomListOfAlbums(search,offset);
+  };
+
   render() {
     let {
       items = [],
@@ -28,6 +33,9 @@ class AlbumList extends React.Component {
     } = this.props.albums;
     return (
       <>
+      <div className="search-container">
+      <Search searchHandler={this.searchHandler}/>
+      </div>
         {items.map((info, index) => {
           return (
             <Card

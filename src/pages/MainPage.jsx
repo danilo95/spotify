@@ -13,7 +13,7 @@ class MainPage extends React.Component {
     verificateIfTokenExist();
     this.props.loading();
   }
-  render() { console.log(this.props.isloading)
+  render() { 
     return (
       <Layout>
         <NavBar />
