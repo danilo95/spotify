@@ -18,6 +18,7 @@ class artistInfo extends React.Component {
     return (
       <>
      <div className="album-cover-container">
+      
       <div className="artis-header">
         <h2>
           <i className="fa fa-music fafa-color" aria-hidden="true" /> {name}
@@ -27,6 +28,7 @@ class artistInfo extends React.Component {
           <i className="fa fa-users fafa-color" aria-hidden="true" /> Followers:
           {followers.total}
         </h3>
+        <Genres genres={genres} />
         </div>
         <img
           className="cover-image-size"
@@ -36,7 +38,6 @@ class artistInfo extends React.Component {
         </div>
         
         <TopTracks id={this.props.id}/>
-        <Genres genres={genres} />
         <RelatedArtists id={this.props.id}/>
       </>
     );

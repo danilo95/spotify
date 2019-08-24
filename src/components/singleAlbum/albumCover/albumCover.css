@@ -23,9 +23,7 @@
   margin-right: 10px;
 }
 .gender-container{
-  display: flex;
-  justify-content: space-around;
-  width: 50%;
+  width: 70%;
 }
 
 

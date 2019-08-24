@@ -3,7 +3,7 @@
   justify-content:center;
 }
 .img-relation{
-  height: 60px;
+  height: 80px;
   width:100%
 }
 .ant-card-grid {
@@ -18,8 +18,11 @@
     box-shadow: 1px 0 0 0 #e8e8e8, 0 1px 0 0 #e8e8e8, 1px 1px 0 0 #e8e8e8, 1px 0 0 0 #e8e8e8 inset, 0 1px 0 0 #e8e8e8 inset;
     -webkit-transition: all 0.3s;
     transition: all 0.3s;
+    
 }
-
+.ant-card-contain-grid{
+margin-top:20px;
+}
 .ant-card-grid:hover {
   transform: scale(1.5); 
  cursor:pointer;
