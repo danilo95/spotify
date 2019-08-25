@@ -19,7 +19,8 @@ export default (state = initialState, action) => {
       case "SINGLE_ALBUM_DATA":
         return {
           ...state,
-          singleAlbum: action.payload
+          singleAlbum: action.payload,
+          loading: false
         };
     default:
       return state;
