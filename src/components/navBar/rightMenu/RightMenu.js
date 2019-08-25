@@ -1,7 +1,7 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
 import { userInfo,logOut } from "../../../actions/UserInfo";
 import UserInfo from "../../userInfo/userInfo";
-import { connect } from "react-redux";
 import { Menu,Popover } from "antd";
 
 class RightMenu extends Component {

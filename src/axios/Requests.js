@@ -14,8 +14,7 @@ export const getRandomListOfAlbums = (search,offset) => {
       return response.data.albums;
     })
     .catch(error => {
-      console.log(error.response.status);
-      return error;
+     handleError(error)
     });
 
   return result;
@@ -52,8 +51,7 @@ export const getartist = id => {
       return response.data;
     })
     .catch(error => {
-      console.log(error);
-      return error;
+      handleError(error)
     });
 
   return result;
@@ -75,8 +73,7 @@ export const getUserInfo = () => {
       return response.data;
     })
     .catch(error => {
-      console.log(error.response);
-      return error;
+      handleError(error)
     });
 
   return result;
@@ -97,8 +94,7 @@ export const getTopTracks = (id) => {
       return response.data;
     })
     .catch(error => {
-      console.log(error.response.status);
-      return error;
+      handleError(error)
     });
 
   return result;
@@ -119,8 +115,7 @@ export const getRelatedArtist = (id) => {
       return response.data;
     })
     .catch(error => {
-      console.log(error.response.status);
-      return error;
+      handleError(error)
     });
 
   return result;

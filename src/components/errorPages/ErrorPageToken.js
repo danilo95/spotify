@@ -1,8 +1,9 @@
 import React from 'react';
+import { connect } from "react-redux";
 import { Result, Button, Icon, Typography } from 'antd';
-
+import { logOut } from "../../actions/UserInfo";
 const { Paragraph, Text } = Typography;
-const ErrorPageToken=()=>{ 
+const ErrorPageToken=(props)=>{ 
 
 return(
 <>
@@ -11,8 +12,8 @@ return(
     title="Something Goes Wrong with your Token"
     subTitle="you should go to the login and start your session again..."
     extra={[
-      <Button type="primary" key="console">
-        Go Console
+      <Button type="primary" key="console" onClick={props.logOut}> 
+        Go Login
       </Button>,
     ]}
   >
@@ -37,4 +38,13 @@ return(
 
 }
 
-export default ErrorPageToken;
+const mapStateToProps = state => {
+  return {
+    logOut:state.userlogOut
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  { logOut }
+)(ErrorPageToken);

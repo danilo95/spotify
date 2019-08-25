@@ -19,7 +19,7 @@ class relatedArtistInformation extends React.Component {
       <Card title="Artists Related">
       {artists.map((artist, index) => {
         return (
-         <Card.Grid><img className="img-relation"src={artist.images.length > 0 ? `${artist.images[0].url}` : null} alt="artist"/></Card.Grid>
+         <Card.Grid key={index}><img className="img-relation"src={artist.images.length > 0 ? `${artist.images[0].url}` : null} alt="artist"/></Card.Grid>
         )
       } )}
               
