@@ -14,3 +14,7 @@ export const relatedArtist = (id) => async dispatch => {
   const response = await getRelatedArtist(id);
   dispatch({ type: "RELATED_ARTIST", payload: response });
 };
+
+export const loading = () => {
+  return { type: "IS_LOADING_ARTIST", payload: true };
+};

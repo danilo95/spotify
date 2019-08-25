@@ -1,11 +1,12 @@
 import React from "react";
 import { connect } from "react-redux";
+import { Layout } from "antd";
 import NavBar from "../components/navBar/NavBar";
 import LoadingPage from "../components/loading/Loading";
 import AlbumList from "../components/albumList/AlbumList";
 import { loading } from "../actions/AlbumListActions";
 import { verificateIfTokenExist } from "../auth/Auth";
-import { Layout } from "antd";
+
 const { Content, Footer } = Layout;
 
 class MainPage extends React.Component {

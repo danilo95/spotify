@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { randomListOfAlbums } from "../../actions/AlbumListActions";
 import { connect } from "react-redux";
+import { randomListOfAlbums } from "../../actions/AlbumListActions";
 import { Card,Pagination } from "antd";
 import "./albumList.css";
 import Search from "../search/search";
