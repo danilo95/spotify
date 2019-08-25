@@ -8,9 +8,7 @@ const [searchTerm, setSearchTerm] = useState('');
 const debouncedSearchTerm = useDebounce(searchTerm, 500);
 useEffect(
     () => {
-    
       if (debouncedSearchTerm) {
-
        props.searchHandler(debouncedSearchTerm,'20')
       } 
     },
@@ -22,7 +20,7 @@ useEffect(
             type="text"
             placeholder="search"
             className="search-Button"
-            onChange={e => setSearchTerm(e.target.value)}
+            onChange={e => e.target.value===""?setSearchTerm("*a"):setSearchTerm(e.target.value)}
           />
       
       </>
