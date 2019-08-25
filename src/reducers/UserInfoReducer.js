@@ -8,6 +8,8 @@ export default (state = initialState, action) => {
         ...state,
         user: action.payload,
       };
+      case "LOG_OUT":
+      return initialState;
     default:
       return state;
   }

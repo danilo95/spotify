@@ -2,19 +2,18 @@ import React from 'react';
 import { Result, Button, Icon, Typography } from 'antd';
 
 const { Paragraph, Text } = Typography;
-const ErrorPage=({status,message,header})=>{ 
+const ErrorPageToken=()=>{ 
 
 return(
 <>
-<Result
-    status="error"
-    title={header}
-    subTitle={message}
+  <Result
+   status="error"
+    title="Something Goes Wrong with your Token"
+    subTitle="you should go to the login and start your session again..."
     extra={[
       <Button type="primary" key="console">
         Go Console
       </Button>,
-      <Button key="buy">Buy Again</Button>,
     ]}
   >
     <div className="desc">
@@ -29,12 +28,7 @@ return(
         </Text>
       </Paragraph>
       <Paragraph>
-        <Icon style={{ color: 'red' }} type="close-circle" /> Your account has been frozen{' '}
-        <a>Thaw immediately &gt;</a>
-      </Paragraph>
-      <Paragraph>
-        <Icon style={{ color: 'red' }} type="close-circle" /> Your account is not yet eligible to
-        apply <a>Apply Unlock &gt;</a>
+        <Icon style={{ color: 'red' }} type="close-circle" /> Your Token expired{' '}
       </Paragraph>
     </div>
   </Result>
@@ -43,4 +37,4 @@ return(
 
 }
 
-export default ErrorPage;
+export default ErrorPageToken;

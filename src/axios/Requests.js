@@ -1,5 +1,5 @@
 import BackendApi from "./BackEndApi";
-
+import Hystory from "../history/History"
 export const getRandomListOfAlbums = (search,offset) => {
   let result = BackendApi.get(
     `/search?query=${search}&type=album&market=SV&offset=${offset}&limit=20`,
@@ -132,7 +132,8 @@ const handleError = errorHttp => {
     case 400:
       return { status: 400, message: errorHttp.response.data.error };
       case 401:
-      return {error:true, status: 401, message: errorHttp.response.data.error,header: 'UPS!! SOMETHING GOES WRONG',};
+     Hystory.push("/Error/");
+     break;
     default:
       return { status: 500, message: errorHttp.response.data.error };
   }

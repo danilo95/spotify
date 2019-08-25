@@ -32,4 +32,8 @@ margin-top:20px;
   .ant-card-grid {
    width: 20%;
   }
+  .list-top-trakcs{
+ width:100%;
+ display:block;
+}
 }

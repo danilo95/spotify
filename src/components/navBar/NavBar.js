@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import RightMenu from "./rightMenu/RightMenu";
 import { Drawer, Button } from "antd";
 import { Link } from "react-router-dom";
+import RightMenu from "./rightMenu/RightMenu";
 import "./navBar.css";
 class Navbar extends Component {
   state = {

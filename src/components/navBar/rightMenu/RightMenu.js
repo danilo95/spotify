@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { userInfo } from "../../../actions/UserInfo";
+import { userInfo,logOut } from "../../../actions/UserInfo";
 import UserInfo from "../../userInfo/userInfo";
 import { connect } from "react-redux";
 import { Menu,Popover } from "antd";
@@ -23,12 +23,12 @@ class RightMenu extends Component {
         <Popover placement="bottom" title={<b>{display_name}</b>} 
         content={<UserInfo email={email} followers={followers} country={country}/>}
          trigger="click">
-          <a href="#">My Profile</a>
+          <a>My Profile</a>
            </Popover>
         </Menu.Item>
        
         <Menu.Item key="app">
-          <a href="#">Log Out</a>
+          <a onClick={this.props.logOut}>Log Out</a>
         </Menu.Item>
        
       </Menu>
@@ -39,11 +39,12 @@ class RightMenu extends Component {
 const mapStateToProps = state => {
   return {
     user: state.user.user,
-    error: state.user.error
+    error: state.user.error,
+    logOut:state.userlogOut
   };
 };
 
 export default connect(
   mapStateToProps,
-  { userInfo }
+  { userInfo,logOut }
 )(RightMenu);
