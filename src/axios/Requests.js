@@ -31,7 +31,7 @@ export const getSingleAlbum = id => {
       return response.data;
     })
     .catch(error => {
-      console.log(error.response);
+      
       handleError(error)
       return error;
     });
@@ -69,7 +69,7 @@ export const getUserInfo = () => {
     }
   )
     .then(response => {
-  
+    console.log(response.data)
       return response.data;
     })
     .catch(error => {
@@ -90,7 +90,7 @@ export const getTopTracks = (id) => {
     }
   )
     .then(response => {
-      console.log(response.data.tracks)
+    
       return response.data;
     })
     .catch(error => {
@@ -111,7 +111,7 @@ export const getRelatedArtist = (id) => {
     }
   )
     .then(response => {
-      console.log(response.data)
+     
       return response.data;
     })
     .catch(error => {

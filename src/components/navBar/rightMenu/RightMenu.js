@@ -13,6 +13,7 @@ class RightMenu extends Component {
      let {
       display_name = null,
       email = null,
+      product=null,
       followers = [],
       country = null,
     } = this.props.user;
@@ -21,7 +22,7 @@ class RightMenu extends Component {
       <Menu mode="horizontal">
        <Menu.Item key="profile">
         <Popover placement="bottom" title={<b>{display_name}</b>} 
-        content={<UserInfo email={email} followers={followers} country={country}/>}
+        content={<UserInfo email={email} followers={followers} country={country} product={product}/>}
          trigger="click">
           <a>My Profile</a>
            </Popover>
