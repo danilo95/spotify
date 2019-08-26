@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useEffect } from 'react';
 import "./search.css";
-import useDebounce from './useDebounce';
+import useDebounce from './UseDebounce';
 
 const Search=(props)=>{
 const [searchTerm, setSearchTerm] = useState('');

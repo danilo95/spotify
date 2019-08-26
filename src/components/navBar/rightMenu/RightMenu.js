@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { Menu,Popover } from "antd";
 import { userInfo,logOut } from "../../../actions/UserInfo";
-import UserInfo from "../../userInfo/userInfo";
+import UserInfo from "../../userInfo/UserInfo";
 
 
 class RightMenu extends Component {
