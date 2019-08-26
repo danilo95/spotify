@@ -17,3 +17,11 @@ Tras la instalación, se inserta la siguiente línea de comando en la terminal
 
 npm start
 y en pocos instantes se abre el navegador por defecto con la página web cargada
+## Autores ✒️
+
+* **Danilo Rivera** - *Trabajo Inicial* 
+
+
+## Licencia 📄
+
+Este proyecto está bajo la Licencia de software Libre.
