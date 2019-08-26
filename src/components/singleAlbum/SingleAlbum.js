@@ -4,7 +4,7 @@ import { List, Avatar } from "antd";
 import { singleAlbumData } from "../../actions/AlbumListActions";
 import { convertToMinutes } from "../../utilities/UtilitiesFunctions";
 import AlbumCover from "./albumCover/AlbumCover";
-
+import DataNotFound from "../errorPages/DataNotFound";
 
 class SingleAlbum extends React.Component {
   componentDidMount() {
@@ -48,7 +48,6 @@ class SingleAlbum extends React.Component {
             </List.Item>
           )}
         />
-        ,
       </>
     );
   }

@@ -17,6 +17,7 @@ class TopTracksByArtist extends React.Component {
     return (
       <div className="list-top-trakcs"> 
        <List
+        header={<div>Top Tracks</div>}
           itemLayout="horizontal"
           dataSource={tracks}
           renderItem={item => (

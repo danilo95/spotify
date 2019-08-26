@@ -28,10 +28,13 @@
 
 
 
-@media (max-width: 670px) {
+@media (max-width: 650px) {
   .cover-image-size {
     width: 320px;
     height: 320px;
+  }
+  .album-cover-container{
+    width: 100%;
   }
 }
 
