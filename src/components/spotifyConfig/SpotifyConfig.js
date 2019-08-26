@@ -1,6 +1,6 @@
 export const authEndpoint = "https://accounts.spotify.com/authorize";
-export const clientId = "b920d7a6f04d4a7a9ae79015dc34a691";
-export const redirectUri = "https://danilospotify.herokuapp.com/";
+export const clientId = `${process.env.REACT_APP_TOKEN}`;
+export const redirectUri = "http://localhost:3000/";
 export const scopes = [
   "user-top-read",
   "user-read-currently-playing",
