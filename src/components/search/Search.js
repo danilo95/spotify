@@ -3,15 +3,15 @@ import { useState, useEffect } from 'react';
 import "./search.css";
 import useDebounce from './UseDebounce';
 
-const Search=({searchHandler})=>{
+const Search=(props)=>{
 const [searchTerm, setSearchTerm] = useState('');
 const debouncedSearchTerm = useDebounce(searchTerm, 500);
 useEffect(
     () => {
       if (debouncedSearchTerm) {
-      searchHandler(debouncedSearchTerm,'20')
+       props.searchHandler(debouncedSearchTerm,'20')
       } 
-    },[debouncedSearchTerm, searchHandler]
+    },[debouncedSearchTerm]
   );
     return (
       <>
