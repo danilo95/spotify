@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import "./albumList.css";
 import { Card,Pagination } from "antd";
 import { randomListOfAlbums } from "../../actions/AlbumListActions";
-import Search from "../search/search";
+import Search from "../search/Search";
 import DataNotFound from "../errorPages/DataNotFound";
 const { Meta } = Card;
 

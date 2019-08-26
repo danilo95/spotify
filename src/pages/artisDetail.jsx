@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { Layout } from "antd";
 import NavBar from "../components/navBar/NavBar";
 import { loading } from "../actions/artistActions";
-import ArtistInfo from "../components/artistInfo/artistInfo";
+import ArtistInfo from "../components/artistInfo/ArtistInfo";
 import LoadingPage from "../components/loading/Loading";
 const { Content, Footer } = Layout;
 class artisDetail extends React.Component {
