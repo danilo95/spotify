@@ -13,7 +13,7 @@ import  { useState, useEffect } from 'react';
         clearTimeout(handler);
       };
     },
-    [value] 
+    [delay, value] 
   );
 
   return debouncedValue;
