@@ -123,13 +123,22 @@ export const getRelatedArtist = (id) => {
 
 
 const handleError = errorHttp => {
+  try {
   switch (errorHttp.response.status) {
     case 400:
       return { status: 400, message: errorHttp.response.data.error };
       case 401:
      Hystory.push("/Error/");
      break;
+      case 500:
+     Hystory.push("/InternalError/");
+     break;
     default:
-      return { status: 500, message: errorHttp.response.data.error };
+      Hystory.push("/InternalError/");
   }
+}
+catch(error) {
+ Hystory.push("/InternalError/");
+}
+  
 };
