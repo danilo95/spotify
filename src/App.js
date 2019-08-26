@@ -7,6 +7,7 @@ import artistDetail from "./pages/artisDetail";
 import History from "./history/History";
 import errorPageToken from "./components/errorPages/ErrorPageToken";
 import notFound from "./components/errorPages/NotFound";
+import InternalServerError from "./components/errorPages/InternalServerError"
 const App = () => {
   return (
     <Router history={History}>
@@ -15,6 +16,7 @@ const App = () => {
       <Route path="/AlbumDetail/:id" exact component={detailAlbum} />
       <Route path="/MainPage/" exact component={mainPage} />
       <Route path="/Error/" exact component={errorPageToken} />
+      <Route path="/InternalError/" exact component={InternalServerError} />
       <Route path="/" exact component={index} />
        <Route component={notFound}/>
        </Switch>
