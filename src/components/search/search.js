@@ -11,8 +11,7 @@ useEffect(
       if (debouncedSearchTerm) {
        props.searchHandler(debouncedSearchTerm,'20')
       } 
-    },
-    [debouncedSearchTerm]
+    },[debouncedSearchTerm]
   );
     return (
       <>

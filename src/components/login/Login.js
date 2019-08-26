@@ -8,7 +8,7 @@ import {
 } from "../spotifyConfig/SpotifyConfig";
 import hash from "../hash/Hash";
 import { verificateIfTokenExist } from "../../auth/Auth";
-class Index extends React.Component {
+class Index extends React.Component { 
   componentDidMount() {
     let _token = hash.access_token;
     if (_token) {

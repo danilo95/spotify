@@ -1,8 +1,10 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
+import { Menu,Popover } from "antd";
 import { userInfo,logOut } from "../../../actions/UserInfo";
 import UserInfo from "../../userInfo/userInfo";
-import { Menu,Popover } from "antd";
+
 
 class RightMenu extends Component {
   componentDidMount() {
@@ -24,12 +26,12 @@ class RightMenu extends Component {
         <Popover placement="bottom" title={<b>{display_name}</b>} 
         content={<UserInfo email={email} followers={followers} country={country} product={product}/>}
          trigger="click">
-          <a>My Profile</a>
+              <Link to="#">My Profile</Link>
            </Popover>
         </Menu.Item>
        
         <Menu.Item key="app">
-          <a onClick={this.props.logOut}>Log Out</a>
+        <Link to="#" onClick={this.props.logOut}>Log Out</Link>
         </Menu.Item>
        
       </Menu>

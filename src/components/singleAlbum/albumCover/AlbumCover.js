@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./albumCover.css";
-const AlbumCover = ({ images, artists, albumName, external_urls }) => { console.log('albun name',albumName)
+const AlbumCover = ({ images, artists, albumName, external_urls }) => {
   return (
     <div className="album-cover-container">
     <div className="album-name">

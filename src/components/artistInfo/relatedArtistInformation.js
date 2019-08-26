@@ -4,7 +4,6 @@ import { Card } from 'antd';
 import "./topTracks.css";
 import { relatedArtist } from "../../actions/artistActions";
 
-
 class relatedArtistInformation extends React.Component {
 
   componentDidMount() {
@@ -14,7 +13,6 @@ class relatedArtistInformation extends React.Component {
     let {
       artists = []
     } =this.props.relatedArtistInfo;
-    console.log('artists',artists)
     return (
       <Card title="Artists Related">
       {artists.map((artist, index) => {
